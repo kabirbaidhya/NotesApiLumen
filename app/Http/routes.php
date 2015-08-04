@@ -11,8 +11,9 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return [
-        'hello' => 'world'
-    ];
+$app->group([
+    'prefix' => 'api/v1',
+    'namespace' => 'App\Http\Api\V1\Controllers'
+], function ($app) {
+    $app->get('notes', 'NoteController@index');
 });

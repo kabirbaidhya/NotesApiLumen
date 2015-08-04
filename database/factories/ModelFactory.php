@@ -11,11 +11,11 @@
 |
 */
 
-$factory->define(App\User::class, function ($faker) {
+$factory->define(App\Note::class, function ($faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'password' => str_random(10),
-        'remember_token' => str_random(10),
+        'title' => ucfirst($faker->word),
+        'text' => $faker->paragraph(),
+        'created_at' => \Carbon\Carbon::now(),
+        'updated_at' => \Carbon\Carbon::now(),
     ];
 });

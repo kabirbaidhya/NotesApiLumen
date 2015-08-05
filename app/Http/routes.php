@@ -16,4 +16,8 @@ $app->group([
     'namespace' => 'App\Http\Api\V1\Controllers'
 ], function ($app) {
     $app->get('notes', 'NoteController@index');
+    $app->post('notes', 'NoteController@store');
+    $app->get('notes/{id}', 'NoteController@show');
+    $app->put('notes/{id}', 'NoteController@update');
+    $app->delete('notes/{id}', 'NoteController@destroy');
 });
